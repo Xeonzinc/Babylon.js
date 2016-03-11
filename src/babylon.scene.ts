@@ -890,7 +890,7 @@
                 }
             }
 
-            animatable.reset(); 
+            animatable.reset();
             
             var animtables; 
             animtables = []; 
