@@ -91,7 +91,7 @@
     export class Animation {
         private _keys: Array<any>;
         private _offsetsCache = {};
-        private _highLimitsCache = {};
+        private _highLimitsCache = {}; 
         private _stopped = false;
         public _target;
         private _blendingFactor = 0;

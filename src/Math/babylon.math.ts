@@ -3545,7 +3545,7 @@
             var Trans = (function() {
                 function Trans(blendTime,engine) {
     
-                    var inF = 0;
+                    var inF = 0; 
                     var outF = 1;
                     /////////linear easeIN
                     this.fadeIn = function() {

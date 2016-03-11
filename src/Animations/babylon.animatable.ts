@@ -20,7 +20,7 @@
 
         // Methods
         public getAnimations(): Animation[] {
-            return this._animations;
+            return this._animations; 
         }
 
         public appendAnimations(target: any, animations: Animation[]): void {
