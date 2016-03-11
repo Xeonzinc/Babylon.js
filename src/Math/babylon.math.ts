@@ -3539,4 +3539,30 @@
             Matrix.Zero(), Matrix.Zero(),
             Matrix.Zero(), Matrix.Zero()];                      // 6 temp Matrices at once should be enough
     }
+    //////////////For Animation Morphs
+    export class LinearFADE{
+        constructor (transSpeed: number,engine: any) {
+            var Trans = (function() {
+                function Trans(blendTime,engine) {
+    
+                    var inF = 0;
+                    var outF = 1;
+                    /////////linear easeIN
+                    this.fadeIn = function() {
+                        var dt = engine.deltaTime/1000;
+                        inF =  inF + (1 - inF) * (blendTime*dt);
+                        return inF;
+                    };
+                    this.fadeOut = function() {
+                        var dt = engine.deltaTime/1000;
+                        outF = outF + (0 - outF) * (blendTime*dt);
+                        return outF;
+                    };  
+                }
+                return Trans;
+            })();
+            var E = new Trans(transSpeed,engine); 
+            return E;  
+        }          
+    }
 }

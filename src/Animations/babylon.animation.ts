@@ -102,6 +102,7 @@
 
         public targetPropertyPath: string[];
         public currentFrame: number;
+        public transitionFunction = null;
 
         public allowMatricesInterpolation = false;
 
@@ -419,6 +420,10 @@
                             switch (loopMode) {
                                 case Animation.ANIMATIONLOOPMODE_CYCLE:
                                 case Animation.ANIMATIONLOOPMODE_CONSTANT:
+                                    if(this.transitionFunction) {
+                                        var TWeight = this.transitionFunction.fadeIn();
+                                        return this.matrixInterpolateFunction(this._target._matrix, startValue, TWeight);
+                                    } 
                                     if (this.allowMatricesInterpolation) {
                                         return this.matrixInterpolateFunction(startValue, endValue, gradient);
                                     }
